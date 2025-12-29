@@ -1,0 +1,30 @@
+#wireplumber,
+#image.album,
+#custom-nvidia,
+#custom-cpu,
+#cpu,
+#idle_inhibitor,
+#custom-eth,
+#window,
+#clock,
+#battery,
+#custom-deadbeef,
+#pulseaudio,
+#memory,
+#network,
+#bluetooth,
+#workspaces,
+#tray,
+#custom-ciallo,
+#power-profiles-daemon{
+    /* background: #1e1e2e; */
+    color: #000000;
+    background: rgba(225,225,225,0.85);
+    /* background: rgba(55,55,155,0.8); */
+    /* background: linear-gradient(90deg, #607bff, #ff99ff); */
+    opacity: 0.9;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 5px;
+    /* border: 1px solid #181825; */
+}

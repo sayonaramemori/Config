@@ -1,0 +1,139 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    // "reload_style_on_change": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 42,
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/cpu",
+        "custom/nvidia",
+        "custom/deadbeef",
+        "image#album",
+        "custom/eth"
+    ],
+    // "modules-center": ["hyprland/window","custom/nvidia"],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        // "custom/ciallo",
+        "memory",
+        "power-profiles-daemon",
+        "network",
+        // "bluetooth",
+        "wireplumber",
+        "battery",
+        "tray"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+          "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9",
+          // "urgent": "",
+          // "active": "◈",
+          "default": "♫"
+        },
+        "sort-by-number": true
+    },
+    // "hyprland/window": { "format": "{}" },
+    "custom/cpu": {
+        "interval": 2,
+        "exec": "$HOME/.config/waybar/scripts/cpu.py",
+        "format":"{}",
+        "tooltip-format": "{}",
+        "return-type": "json"
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    }, "tray": { "icon-size": 18, "spacing": 10 },
+    "custom/nvidia": {
+        // "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu,power.draw.instant,memory.used,memory.total --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\), \\([0-9]\\+\\)\\(\\.[0-9]\\+\\), \\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% \\2°C \\3W \\5MB/g'",
+        "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu,power.draw.instant,memory.used,memory.total --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\), \\([0-9]\\+\\)\\(\\.[0-9]\\+\\), \\([0-9]\\+\\), \\([0-9]\\+\\)/\\2°C/g'",
+        "format": "󰢮 {}",
+        "interval": 2
+    },
+    "image#album": {
+        "path": "/home/kazusa/Downloads/eth.svg",
+        "size": 30
+    },
+    "custom/eth":{
+        "interval": 3,
+        "format": "{}",
+        "exec": "~/okx/bin/python3 $HOME/.config/waybar/scripts/eth.py"
+    },
+    "custom/ciallo":{
+        // "format": "Ciallo～(∠・ω< )⌒☆  World "
+        "exec": "$HOME/.config/waybar/scripts/ciallo.py",
+        "return-type": "json"
+    },
+    "clock": {
+        "interval": 10,
+        "format": "{:%Y-%m-%d %H:%M}",
+        // "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip": true
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "helvum",
+        "format-icons": ["", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 1,
+        "format-wifi": "  {bandwidthDownBytes}",
+        "format-ethernet": "{bandwidthDownBytes}",
+        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "bluetooth": {
+	    "format": " {status}",
+	    "format-disabled": "", // an empty format will hide the module
+	    "format-connected": " {num_connections}",
+	    "tooltip-format": "{device_alias}",
+	    "tooltip-format-connected": " {device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}"
+    },
+    "battery": {
+        "states": {
+            "good": 75,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "custom/deadbeef": {
+        "format": " {}",
+        "max-length": 40,    
+        "interval": 3,
+        "exec": "deadbeef --nowplaying-tf '{\"text\": \"%title%\", \"tooltip\":\"%artist% - %title%\",\"class\":\"$if(%isplaying%,playing,not-playing)\"}'",
+        "return-type": "json",
+        "exec-if": "pgrep deadbeef",
+        "on-click": "deadbeef --toggle-pause"
+    }
+}

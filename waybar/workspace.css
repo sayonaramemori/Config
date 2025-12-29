@@ -1,0 +1,42 @@
+#workspaces {
+    background: rgba(0,0,0,0.0);
+    border-width: 0px;
+    border-radius: 10px;
+    border-color: #4f5f5f;
+    padding: 0px;
+    margin-left: 10px;
+    font-family: "Anonymous Pro";
+}
+
+#workspaces button {
+    background: #000000;
+    color: #ffffff;
+    min-width: 16px;
+}
+
+#workspaces button.active {
+    /* background: #ffffff; */
+    color: #00ff8f;
+}
+#workspaces button:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#workspaces button:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/*
+#workspaces button.urgent {
+    color: #11111b;
+    background: #a6e3a1;
+    border-radius: 10px;
+}
+#workspaces button:hover {
+    background: #11111b;
+    color: #fdd6f4;
+    border-radius: 10px;
+}
+*/
+

@@ -1,0 +1,131 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* font-family: "ComicShannsMono Nerd Font"; */
+    font-family: "JetBrainsMono Nerd Font";
+    /* font-family: "CodeNewRoman Nerd Font"; */
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+@import "base.css";
+
+#window {
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+window#waybar {
+    background: rgba(255, 255, 255, 0);
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#battery {
+    border-radius: 0px 20px 20px 0px;
+    margin-right: 10px;
+}
+
+#custom-deadbeef {
+    /* color: #000000; */
+    border-radius: 20px;
+    /* background: linear-gradient(270deg, #607bff, #ff99ff); */
+    /* min-width: 20px; */
+    border-right: 0px;
+    margin-left: 10px;
+}
+#custom-nvidia {
+    color: #000000;
+    /* color: #ff99ff; */
+    /* background: linear-gradient(90deg, #607bff, #ff99ff); */
+    border-radius: 0px 20px 20px 0px;
+    border-left: 0px;
+}
+#custom-cpu {
+    color: #000000;
+    border-radius: 20px 0px 0px 20px;
+    /* background: linear-gradient(270deg, #607bff, #ff99ff); */
+    margin-left: 10px;
+}
+#image.album{
+    border-radius: 10px 0px 0px 10px;
+    background: #607bff;
+    margin-left: 10px;
+    /* padding-left: -3px; */
+    border-right: 0px;
+}
+#custom-eth {
+    color: #00ff01;
+    border-radius: 0px 10px 10px 0px;
+    background: linear-gradient(90deg, #607bff, #ff99ff);
+    border-left: 0px;
+    padding-right: 18px;
+    /* min-width: 70px; */
+}
+#tray {
+    /* border-radius: 10px 10px 10px 10px; */
+    border-radius: 20;
+    margin-right: 10px;
+}
+
+#memory {
+    border-radius: 20px 0px 0px 20px;
+}
+
+#clock {
+    color: #000000;
+    background: rgba(225,225,225,0.85);
+    border-radius: 20px;
+    border-width: 0px;
+    font-family: "Anonymous Pro";
+    font-style: italic;
+    font-size: 20px;
+    min-width: 200px;
+}
+
+
+
+#custom-ciallo {
+    color: #ffffff;
+    background: linear-gradient(90deg, #007bff, #ff99ff);
+    /* color: #ff99ff; */
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 10px;
+    /* margin-right: 10px; */
+    border-right: 0px;
+}
+
+#network {
+    min-width: 90px;
+    /* border-radius: 20px 0px 0px 20px; */
+}
+
+#bluetooth {
+    color: #89b4fa;
+    border-radius: 0px 0px 0px 0px;
+    margin-right: 0px
+} 
+
+#pulseaudio {
+    color: #89b4fa;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#pulseaudio.microphone {
+    color: #cba6f7;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+}
+
+@import "workspace.css";
