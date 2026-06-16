@@ -10,5 +10,3 @@ umount /mnt
 mount -t btrfs -o subvol=/@,compress=zstd /dev/${rootname} /mnt
 mount --mkdir -t btrfs -o subvol=/@home,compress=zstd /dev/${rootname} /mnt/home
 mount --mkdir /dev/${efiname} /mnt/efi
-
-
