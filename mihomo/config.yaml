@@ -1,5 +1,5 @@
 secret: ''
-external-ui: ~/.config/mihomo/ui
+external-ui: /etc/mihomo/ui
 external-ui-name: my-ui
 external-ui-url: "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 external-controller: 0.0.0.0:9097
@@ -7,12 +7,31 @@ external-controller-cors:
   allow-private-network: true
   allow-origins:
     - '*'
+
 proxy-providers:
-  one:
+  my-sub:
     type: http
     interval: 1800
     proxy: DIRECT
-    url: "https://naiun.adfgawidhioawjd.site/api/v1/client/subscribe?token=c1d679e53d6940e29c7403f19672f3dc"
+    path: ./proxy_providers/my-sub.yaml
+    url: "Your sub URL"
+
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    use:
+      - my-sub
+    proxies:
+      - DIRECT
+
+  - name: ♻️ 自动选择
+    type: url-test
+    use:
+      - my-sub
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    timeout: 5000
+
 global-ua: clash.meta
 geodata-mode: false
 geodate-loader: standard
@@ -47,3 +66,7 @@ dns:
   ipv6: false
   enhanced-mode: redir-host
   fake-ip-range: 198.18.0.1/16
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,🚀 节点选择

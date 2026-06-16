@@ -1,4 +1,4 @@
-paru -S ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick &&
+pacman -S ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick &&
 mkdir -p ~/.config/yazi/
 ya pkg add yazi-rs/plugins:full-border 
 ya pkg add yazi-rs/plugins:git

@@ -6,4 +6,4 @@ ln -s /efi/grub /boot/grub
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
-vim /etc/default/grub
+vim /etc/default/grub && grub-mkconfig -o /boot/grub/grub.cfg
